@@ -37,6 +37,7 @@ h3 {
 
 h2 {
   font-size: 1.35rem;
+  margin-bottom: 0;
 }
 
 h4 {
@@ -497,61 +498,29 @@ h4 {
 }
 
 @media (max-width: 767px) {
-  html,
-  body {
-    font-size: 14px;
-  }
   .container {
     padding: 0;
   }
-  .m-card-list {
-    overflow-x: auto;
-    flex-wrap: nowrap;
+  h3 {
+    font-size: 1.12rem;
+    font-weight: 500;
   }
-  .m-card-list .m-card-item {
-    min-width: 130px;
-    margin-bottom: 20px;
+  h2 {
+    font-size: 1.2rem;
+    margin-bottom: 0;
   }
-  .m-card-list::-webkit-scrollbar {
-    display: none;
+  .link {
+    font-size: 0.85rem;
   }
-  .m-card-list-1 {
-    flex-wrap: wrap;
-    justify-content: space-between;
+  .ps-5 {
+    padding-left: 15px !important;
   }
-  .m-card-list-1 .m-card-item {
-    width: 48%;
-    min-width: 48%;
-    flex: 1 48%;
-    margin-right: 0;
+  .px-5 {
+    padding-right: 20px !important;
+    padding-left: 20px !important;
   }
-  .card-detail {
-    padding: 20px;
-    margin: 0;
-  }
-  .card-detail .card {
-    border-radius: 16px !important;
-    background: #fff;
-    box-shadow: 3px 6px 20px rgba(0, 0, 0, 0.16);
-    padding: 20px;
-  }
-  .card-detail .card .img-fluid {
-    max-width: 130px;
-  }
-  .card-detail .card .card-body {
-    padding: 0;
-    margin: 0;
-    border: 0;
-    padding-top: 20px;
-  }
-  .card-detail .card .card-body .card-body-top .cbt-rating {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    margin: 0 !important;
-  }
-  .card-detail .card .card-body .card-body-bottom {
-    margin-top: 20px;
+  .pe-5 {
+    padding-right: 15px !important;
   }
   .section-header {
     margin-top: 20px;
@@ -560,5 +529,19 @@ h4 {
   .section-header.section-header-top {
     margin-top: 20px;
     margin-bottom: 20px;
+  }
+  .swiper-slide-auto-card {
+    width: 80px !important;
+  }
+  .m-card {
+    height: 120px;
+    width: 80px;
+  }
+  .m-card .m-card-cover {
+    height: 120px;
+    width: 80px;
+  }
+  .hero .hero-content .hero-title {
+    font-size: 1.6rem;
   }
 }/*# sourceMappingURL=index.css.map */

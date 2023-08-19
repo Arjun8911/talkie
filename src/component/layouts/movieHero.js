@@ -10,9 +10,19 @@ export default function MovieHero(props) {
           {props.title ? props.title : ""}
         </h2>
         <div className="hero-first-info" data-animate="bottom">
-          <span>{props.date ? props.date : ""}</span>
-          <PiDotOutlineFill className="dot" />
-          <span>1h 40m</span>
+          <span>{props.date ? props.date.slice(0, 4) : ""}</span>
+          {props.runtime ? (
+            <>
+              {" "}
+              <PiDotOutlineFill className="dot" />
+              <span>
+                {Math.floor(props.runtime / 60)}h {props.runtime % 60}m
+              </span>
+            </>
+          ) : (
+            ""
+          )}
+
           {props.language ? (
             <>
               <PiDotOutlineFill className="dot" />
@@ -27,7 +37,7 @@ export default function MovieHero(props) {
         </p>
         <div className="hero-second-info" data-animate="bottom">
           {props.genre?.map((item, index) => (
-            <span key={index}>{item.id}</span>
+            <span key={index}>{item.name}</span>
           ))}
         </div>
       </div>

@@ -30,7 +30,7 @@ export default function Header() {
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/">
+                <Link className="nav-link" to="/movies">
                   <FiVideo className="nav-link-icon" /> Movies
                 </Link>
               </li>

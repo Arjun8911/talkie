@@ -9,26 +9,29 @@ import MovieHero from "../layouts/movieHero";
 
 export default function Hero() {
   const [data, setData] = useState([]);
-  function getData() {
-    const options = {
-      method: "GET",
-      headers: {
-        accept: "application/json",
-        Authorization:
-          "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI4MTRkZmZkZTIzODgyNWQwMzdkZjJhMGU5MTJmZWNlOCIsInN1YiI6IjYyMWRmNTAwOWYxYmU3MDAxYjExN2NjNSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.z5tL5M-c4uvStpT_gqYdNvwtQVEU5ueJibcl3ZkSh6I",
-      },
-    };
-    fetch("https://api.themoviedb.org/3/trending/movie/day", options)
-      .then((response) => response.json())
-      .then((response) => {
-        setData(response.results.filter((item) => item.vote_count > 1000));
-      })
-      .catch((err) => console.error(err));
+  const options = {
+    method: "GET",
+    headers: {
+      accept: "application/json",
+      Authorization:
+        "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI4MTRkZmZkZTIzODgyNWQwMzdkZjJhMGU5MTJmZWNlOCIsInN1YiI6IjYyMWRmNTAwOWYxYmU3MDAxYjExN2NjNSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.z5tL5M-c4uvStpT_gqYdNvwtQVEU5ueJibcl3ZkSh6I",
+    },
+  };
+  async function getData() {
+    try {
+      let rowdata = await fetch(
+        "https://api.themoviedb.org/3/trending/movie/day",
+        options
+      );
+      let response = await rowdata.json();
+      setData(response.results);
+    } catch (err) {
+      console.error(err);
+    }
   }
   useEffect(() => {
     getData();
   }, []);
-  console.log(data);
   return (
     <>
       <Swiper

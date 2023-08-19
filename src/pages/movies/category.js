@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import MovieCard from "../../component/layouts/movieCard";
-import { Link } from "react-router-dom";
-function Movies() {
+import { Link, useParams } from "react-router-dom";
+function MoviesCategory() {
+  const { slug } = useParams();
   const [data, setData] = useState([]);
   const options = {
     method: "GET",
@@ -14,7 +15,7 @@ function Movies() {
   async function getData() {
     try {
       let rowdata = await fetch(
-        "https://api.themoviedb.org/3/movie/now_playing",
+        `https://api.themoviedb.org/3/movie/${slug}`,
         options
       );
       let response = await rowdata.json();
@@ -31,7 +32,9 @@ function Movies() {
     <main className="main">
       <div className="container">
         <div className="">
-          <h2 className="title text-center my-4">Movies List</h2>
+          <h2 className="title text-center my-4 text-capitalize">
+            {slug.split("").map((item) => (item == "_" ? " " : item))} Movies
+          </h2>
         </div>
         <div className="d-flex flex-wrap justify-content-center">
           {data.map((item, index) => (
@@ -56,4 +59,4 @@ function Movies() {
   );
 }
 
-export default Movies;
+export default MoviesCategory;

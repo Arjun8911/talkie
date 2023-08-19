@@ -1,7 +1,6 @@
 import React from "react";
 import UpcomingMovies from "../../component/upcomingMovie";
 import TheatreMovies from "../../component/theatreMovies";
-import PopularTv from "../../component/popularTv";
 import MoviesGenre from "../../component/moviesGenre";
 import TopRatedMovies from "../../component/topRatedMovies";
 import Hero from "../../component/home/hero";
@@ -9,9 +8,10 @@ import Hero from "../../component/home/hero";
 export default function Home() {
   return (
     <>
-      <Hero />
+      <div className="section-hero">
+        <Hero />
+      </div>
       <TheatreMovies />
-      <PopularTv />
       <UpcomingMovies />
       <MoviesGenre />
       <TopRatedMovies />

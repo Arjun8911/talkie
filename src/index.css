@@ -36,7 +36,7 @@ h3 {
 }
 
 h2 {
-  font-size: 1.6rem;
+  font-size: 1.35rem;
 }
 
 h4 {
@@ -44,15 +44,30 @@ h4 {
   font-weight: 500;
 }
 
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.link {
+  display: inline-flex;
+  align-items: center;
+  color: hsla(0, 0%, 100%, 0.67);
+}
+.link:hover {
+  color: #e1e6f0;
+}
+
 .rating-color {
   color: #f5c518 !important;
 }
 
-.b-shadow, .t-card, .g-card, .m-card {
+.b-shadow, .c-card, .t-card, .g-card, .m-card {
   box-shadow: -5px -5px 20px rgba(0, 0, 0, 0.16);
 }
 
-.scale-hover:hover, .t-card:hover, .g-card:hover, .m-card:hover, .header .navbar .navbar-nav .nav-item .nav-link:hover {
+.scale-hover:hover, .c-card:hover, .t-card:hover, .g-card:hover, .m-card:hover, .header .navbar .navbar-nav .nav-item .nav-link:hover {
   transition-duration: 0.3s;
   transition-property: "transform";
   transition-timing-function: ease-in-out;
@@ -226,6 +241,10 @@ h4 {
 .content-active [data-animate] {
   opacity: 1;
   transform: none;
+}
+
+.section-hero {
+  height: calc(100vh - 100px);
 }
 
 .hero {
@@ -408,47 +427,22 @@ h4 {
   transform: translate(-50%, -50%);
 }
 
-.card-detail {
-  padding-left: 15px;
-  padding-right: 15px;
-  margin: 45px 0;
-}
-
-.card {
-  border: 0;
-  border-radius: 0 !important;
-  background-color: transparent;
-}
-.card .card-body {
+.c-card {
+  border-radius: 4px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  height: 100%;
-  padding-top: 15px;
-  padding-right: 0;
-  padding-bottom: 0;
-  padding-left: 50px;
-  min-height: 474.7px;
+  height: 261px;
+  width: 138px;
+  background-color: #252833;
 }
-.card .card-body .card-body-top .card-title {
-  margin-bottom: 0;
+.c-card .c-card-cover {
+  height: 175px;
+  width: 138px;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
 }
-.card .card-body .card-body-top .card-text {
-  font-size: 0.85rem;
-}
-.card .card-body .card-body-bottom {
-  display: flex;
-  justify-content: space-between;
-}
-.card .card-body .card-body-bottom .title span {
-  display: block;
-}
-.card .card-body .card-body-bottom .title small {
-  display: block;
-  font-weight: 500 !important;
-  font-size: 0.85rem;
-  color: hsla(0, 0%, 100%, 0.67);
-  margin-top: 8px;
+.c-card .c-card-body {
+  padding: 6px;
 }
 
 .swiper:hover .swiper-button-prev, .swiper:hover .swiper-button-next {

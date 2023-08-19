@@ -7,6 +7,7 @@ import Movies from "./pages/movies";
 import MovieDetail from "./pages/movies/view";
 import Categories from "./pages/categories";
 import Loading from "./component/layouts/loading";
+import MoviesCategory from "./pages/movies/category";
 export default function App() {
   const [loading, setLoading] = useState(true);
   useEffect(() => {
@@ -23,8 +24,11 @@ export default function App() {
       ) : (
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="movie/view" element={<MovieDetail />}>
+          <Route path="movie" element={<MovieDetail />}>
             <Route path=":movieId" element={<MovieDetail />} />
+          </Route>
+          <Route path="movies/category/" element={<MoviesCategory />}>
+            <Route path=":slug" element={<MoviesCategory />} />
           </Route>
           <Route path="movies" element={<Movies />} />
           <Route path="categories" element={<Categories />} />

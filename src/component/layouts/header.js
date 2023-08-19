@@ -47,9 +47,9 @@ export default function Header() {
             </ul>
             <ul className="navbar-nav">
               <li className="nav-item">
-                <a className="nav-link" href="#">
+                <Link className="nav-link" to="/movie/search">
                   <FiSearch className="nav-link-icon" /> Search
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
                 <Link className="nav-link" to="/categories">

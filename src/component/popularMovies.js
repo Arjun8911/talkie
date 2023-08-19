@@ -9,7 +9,7 @@ import "swiper/css/navigation";
 import { Mousewheel, Navigation } from "swiper/modules";
 import { BsChevronRight } from "react-icons/bs";
 
-export default function TopRatedMovies() {
+export default function PopularMovies() {
   const [data, setData] = useState([]);
   const options = {
     method: "GET",
@@ -22,7 +22,7 @@ export default function TopRatedMovies() {
   async function getData() {
     try {
       let rowdata = await fetch(
-        "https://api.themoviedb.org/3/movie/top_rated",
+        "https://api.themoviedb.org/3/movie/popular",
         options
       );
       let response = await rowdata.json();
@@ -37,12 +37,8 @@ export default function TopRatedMovies() {
   return (
     <div className="section-carousel overflow-hidden ps-5 pt-5">
       <div className="section-header mb-3 pe-5">
-        <h2 className="title">Top Rated Movies</h2>
-        <Link
-          to={`/movies/category/top_rated`}
-          className="link"
-          id="now_playing"
-        >
+        <h2 className="title">Popular Movies</h2>
+        <Link to={`/movies/category/popular`} className="link" id="now_playing">
           View All <BsChevronRight />
         </Link>
       </div>

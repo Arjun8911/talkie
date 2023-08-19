@@ -3,21 +3,26 @@ import { useParams } from "react-router-dom";
 import MovieHero from "../../component/layouts/movieHero";
 export default function MovieDetail() {
   let { movieId } = useParams();
-  const [imgLoad, setImgLoad] = useState(false);
   const [data, setData] = useState([]);
-  function getData() {
-    fetch(
-      `https://api.themoviedb.org/3/movie/${movieId}?api_key=814dffde238825d037df2a0e912fece8`
-    )
-      .then((response) => {
-        return response.json();
-      })
-      .then((response) => {
-        setData(response);
-      })
-      .catch((err) => {
-        console.error(err);
-      });
+  const options = {
+    method: "GET",
+    headers: {
+      accept: "application/json",
+      Authorization:
+        "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI4MTRkZmZkZTIzODgyNWQwMzdkZjJhMGU5MTJmZWNlOCIsInN1YiI6IjYyMWRmNTAwOWYxYmU3MDAxYjExN2NjNSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.z5tL5M-c4uvStpT_gqYdNvwtQVEU5ueJibcl3ZkSh6I",
+    },
+  };
+  async function getData() {
+    try {
+      let rowdata = await fetch(
+        `https://api.themoviedb.org/3/movie/${movieId}`,
+        options
+      );
+      let response = await rowdata.json();
+      setData(response);
+    } catch (err) {
+      console.error(err);
+    }
   }
   useEffect(() => {
     getData();

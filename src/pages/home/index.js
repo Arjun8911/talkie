@@ -4,6 +4,7 @@ import TheatreMovies from "../../component/theatreMovies";
 import MoviesGenre from "../../component/moviesGenre";
 import TopRatedMovies from "../../component/topRatedMovies";
 import Hero from "../../component/home/hero";
+import PopularMovies from "../../component/popularMovies";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <TheatreMovies />
       <UpcomingMovies />
       <MoviesGenre />
+      <PopularMovies />
       <TopRatedMovies />
     </>
   );
